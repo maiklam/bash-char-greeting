@@ -12,13 +12,13 @@ function greeting() {
     name=`cat ${DIR}/names.txt | ${SHUF} -n 1`
     userFullName=`finger $USER | head -n1 | cut -d ":" -f3 | xargs`
 
-
     cat <<GREET_MSG
 
 
 `cat ${DIR}/characters/${character}`
 
-`uppercase_first ${name}` the ${nationality} `uppercase_first ${character}` says "${helloVal}, ${userFullName}!" :)
+`uppercase_first ${name}` the ${nationality} `echo ${character//_/ }` says
+..."${helloVal}, ${userFullName}!"
 
 GREET_MSG
 }
