@@ -8,8 +8,8 @@ function greeting() {
     nationalGreeting=`${SHUF} -n 1 ${DIR}/greetings.txt`
     helloVal=`echo ${nationalGreeting} | cut -d "," -f1`
     nationality=`echo ${nationalGreeting} | cut -d "," -f2`
-    character=`${LS} ${DIR}/characters | grep -i "^${nationality:0:1}" | ${SHUF} -n 1`
-    name=`cat ${DIR}/names.txt | grep "^${character:0:1}"| ${SHUF} -n 1`
+    character=`${LS} ${DIR}/characters | ${SHUF} -n 1`
+    name=`cat ${DIR}/names.txt | ${SHUF} -n 1`
     userFullName=`finger $USER | head -n1 | cut -d ":" -f3 | xargs`
 
 
