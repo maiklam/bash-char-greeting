@@ -5,6 +5,9 @@ function greeting() {
     define_shuf
     define_ls
 
+    BG_COLOR='\033[1;30m'
+    NC='\033[0m'
+
     nationalGreeting=`${SHUF} -n 1 ${DIR}/greetings.txt`
     helloVal=`echo ${nationalGreeting} | cut -d "," -f1`
     nationality=`echo ${nationalGreeting} | cut -d "," -f2`
@@ -17,8 +20,7 @@ function greeting() {
 
 `cat ${DIR}/characters/${character}`
 
-`uppercase_first ${name}` the ${nationality} `echo ${character//_/ }` says
-..."${helloVal}, ${userFullName}!"
+`echo -e "${BG_COLOR}$(uppercase_first ${name}) the ${nationality} ${character//_/ } says: \"${helloVal}, ${userFullName}!\" ${NC}"`
 
 GREET_MSG
 }
