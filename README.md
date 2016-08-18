@@ -1,5 +1,10 @@
 Bash script to print an ASCII art character with a greeting.
 
+Requirements to run on Mac 
+-----
+`brew install coreutils`
+
+
 Usage
 -----
 
