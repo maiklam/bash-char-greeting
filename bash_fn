@@ -12,15 +12,15 @@ function greeting() {
     helloVal=`echo ${nationalGreeting} | cut -d "," -f1`
     nationality=`echo ${nationalGreeting} | cut -d "," -f2`
     character=`${LS} ${DIR}/characters | ${SHUF} -n 1`
-    name=`cat ${DIR}/names.txt | ${SHUF} -n 1`
-    userFullName=`finger $USER | head -n1 | cut -d ":" -f3 | xargs`
+    characterName=`cat ${DIR}/names.txt | ${SHUF} -n 1`
+    userFirstName=`finger $USER | head -n1 | cut -d ":" -f3 | xargs | cut -d " " -f1 | xargs`
 
     cat <<GREET_MSG
 
 
 `cat ${DIR}/characters/${character}`
 
-`echo -e "${BG_COLOR}$(uppercase_first ${name}) the ${nationality} ${character//_/ } says: \"${helloVal}, ${userFullName}!\" ${NC}"`
+`echo -e "${BG_COLOR}$(uppercase_first ${characterName}) the ${nationality} ${character//_/ } says: \"${helloVal}, ${userFirstName}!\" ${NC}"`
 
 GREET_MSG
 }
