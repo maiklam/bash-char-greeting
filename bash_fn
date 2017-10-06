@@ -15,7 +15,7 @@ function greeting() {
     characterName=`cat ${DIR}/names.txt | ${SHUF} -n 1`
     userFirstName=`finger $USER | head -n1 | cut -d ":" -f3 | xargs | cut -d " " -f1 | xargs`
 
-    cat <<GREET_MSG
+    cat << GREET_MSG
 
 
 `cat ${DIR}/characters/${character}`
